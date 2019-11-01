@@ -30,6 +30,8 @@ app.get('/profile/:id', (req, res) => { controller.profile.handleProfileGet(req,
 app.put('/image', (req, res) => { controller.image.handleImage(req, res, db) })
 app.post('/imageurl', (req, res) => { controller.image.handleApiCall(req, res) })
 
-app.listen(3001, () => {
-	console.log('app is running on port 3001');
+
+const PORT = process.env.PORT !== undefined ? process.env.PORT : 3000
+app.listen(PORT, () => {
+	console.log(`app is running on port ${ PORT }`);
 })
